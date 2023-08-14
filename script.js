@@ -1,24 +1,35 @@
-let mylibary = [];
+const authorH = document.getElementById("author")
+const titleH  = document.getElementById('title')
+const pagesH  = document.getElementById("pages")
+const readH = document.getElementById('read')
+const submit = document.querySelector(".submit-btn")
 
-for(let i = 0; i < mylibary.length; i++) {
-    let currBook = myLibary[i];
+const myLibary = [];
 
-}
+// for(let i = 0; i < myLibary.length; i++) {
+//     let currBook = myLibary[i];
+// }
+
 
 function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+    this.title = titleH.value;
+    this.author = authorH.value;
+    this.pages = pagesH.value;
+    this.read = readH.value;
+    myLibary.push(this)
 }
 
-const book1 = new Book("The Last Wish", "Andrzej Sapkowski", "352", "No")
+submit.addEventListener('click' , (event) => {
+    event.preventDefault();
+    let book1 = new Book(titleH.value, authorH.value, pagesH.value, readH.value)
+    modal.close()
+})
 
-Book.prototype.myLove = function() {
-    console.log("I love The Witcher Universe.")
-}
 
-console.log(book1.valueOf())
+
+
+
+
 
 const modal = document.getElementById("modal")
 const newBook = document.getElementById("newbook")
