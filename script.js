@@ -7,7 +7,7 @@ const form = document.getElementById('book-form')
 const books = document.querySelector(".books")
 
 const myLibary = [];
-const workLibary = [];
+let count = 0
 
 
 function Book(title, author, pages, read){
@@ -16,18 +16,20 @@ function Book(title, author, pages, read){
   this.pages = pages;
   this.read = read;
   myLibary.push(this)
+  count++
 }
 
 function addBook() {
-for(let i = 0; i < myLibary.length; i++) {
+for(let i = (count - 1); i < myLibary.length; i++) {
     let currBook = myLibary[i];
-    const book = document.createElement('div')
+    let book = document.createElement('div')
     book.classList.add('book')
     book.innerHTML = `Author: ${currBook.author}<br>Tittle: ${currBook.title}<br>Pages: ${currBook.pages}<br>Read: ${currBook.read}`
-    workLibary.push(book++)
+    book.setAttribute('data', `${i}`)
     books.appendChild(book)
 }
 }
+
 
 submit.addEventListener('click' , (event) => {
     event.preventDefault();
