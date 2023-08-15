@@ -11,22 +11,22 @@
     <div class="page">
         <div class="header">My Libary</div>
         <div class="container">
-            <div class="books"> 
-
-            </div>
             <div class="new-book"> 
                 <button id="newbook">New Book</button> 
             </div>
+            <div class="books"> 
+                
+            </div>
             <dialog class="modal" id="modal">
-                <form action="">
+                <form id="book-form">
                     <label for="author">Who is the author of the Book?</label>
-                    <input id="author" type="text" placeholder="Andrzej" required>
+                    <input id="author" type="text" required>
                     <label for="tile">Title of the Book?</label>
-                    <input id="title" type="text" placeholder="Witcher" required>
+                    <input id="title" type="text" required>
                     <label for="pages">How many pages are in the Book?</label>
-                    <input id="pages" type="number" placeholder="314" required>
+                    <input id="pages" type="number" required>
                     <label for="read">Have you read the Book?</label>
-                    <input id="read" type="text" placeholder="" required>
+                    <input id="read" type="text" required>
                     <button class="submit-btn" >Submit</button>
                 </form>
             </dialog>
