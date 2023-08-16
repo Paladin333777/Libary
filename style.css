@@ -27,5 +27,22 @@
 
 .book {
     border: solid 1px black;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 4fr 1fr;
     
+}
+
+.delete {
+    font-weight: bolder;
+    font-size: larger;
+    grid-area: 1 / 2 / 2 / 2;
+}
+
+.delete:hover{
+    background-color: rgb(177, 23, 23);
+}
+
+.readSta {
+    grid-area: 2 / 1 / 2 / 1;
 }

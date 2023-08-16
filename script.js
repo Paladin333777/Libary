@@ -24,9 +24,30 @@ for(let i = (count - 1); i < myLibary.length; i++) {
     let currBook = myLibary[i];
     let book = document.createElement('div')
     book.classList.add('book')
-    book.innerHTML = `Author: ${currBook.author}<br>Tittle: ${currBook.title}<br>Pages: ${currBook.pages}<br>Read: ${currBook.read}`
+    let readStatus = document.createElement('button')
+    readStatus.innerHTML = `${currBook.read}`
+    readStatus.classList.add('readSta')
+    book.innerHTML = `Author: ${currBook.author}<br>Tittle: ${currBook.title}<br>Pages: ${currBook.pages}`
+    let delButton = document.createElement('button')
+    delButton.classList.add("delete")
+    delButton.innerHTML = "X"
+    delButton.setAttribute('data', `${i}`)
     book.setAttribute('data', `${i}`)
+    book.appendChild(readStatus)
+    book.appendChild(delButton)
     books.appendChild(book)
+    
+    delButton.addEventListener('click', (event) => {
+      book.remove()
+    })
+
+    readStatus.addEventListener('click', (e) => {
+      if(readStatus.innerHTML == "Read"){
+        readStatus.innerHTML = "Not Read"
+      } else if(readStatus.innerHTML == "Not Read"){
+        readStatus.innerHTML = "Read"
+      }
+    })
 }
 }
 
